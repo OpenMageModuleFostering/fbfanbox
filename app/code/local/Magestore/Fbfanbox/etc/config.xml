@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<config>
+	 <default>
+		<fbfanbox>
+			<general>
+				<enable>1</enable>
+				<fb_page_id>255197337659</fb_page_id>
+				<header>1</header>
+				<box_width>292</box_width>
+				<connection>10</connection>
+			</general>
+			
+		</fbfanbox>
+	</default>
+    <modules>
+        <Magestore_Fbfanbox>
+            <version>0.1.0</version>
+        </Magestore_Fbfanbox>
+    </modules>
+    <frontend>
+        <routers>
+            <fbfanbox>
+                <use>standard</use>
+                <args>
+                    <module>Magestore_Fbfanbox</module>
+                    <frontName>fbfanbox</frontName>
+                </args>
+            </fbfanbox>
+        </routers>
+        <layout>
+            <updates>
+                <fbfanbox>
+                    <file>fbfanbox.xml</file>
+                </fbfanbox>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<fbfanbox>
+				<use>admin</use>
+				<args>
+					<module>Magestore_Fbfanbox</module>
+					<frontName>fbfanbox</frontName>
+				</args>
+			</fbfanbox>
+        </routers>
+    </admin>
+    <adminhtml>
+		<menu>
+			<magestore>
+				<title>Magestore Extension</title>
+				<sort_order>71</sort_order>  
+				<children>
+					<fbfanbox module="fbfanbox">
+						<title>Fbfanbox</title>
+						<sort_order>71</sort_order>               
+						<children>
+							<items module="fbfanbox">
+								<title>FbFanBox Setting </title>
+								<sort_order>0</sort_order>
+								<action>adminhtml/system_config/edit/section/fbfanbox</action>
+							</items>
+						</children>
+					</fbfanbox>
+				</children>
+			</magestore>	
+		
+			
+		</menu>
+		
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<fbfanbox translate="title">
+											<title>FBFanBox</title>
+											<sort_order>50</sort_order>
+										</fbfanbox>																			
+									</children>
+								</config>
+							</children>
+						</system>
+						<Magestore_Fbfanbox>
+							<title>Fbfanbox Module</title>
+							<sort_order>10</sort_order>
+						</Magestore_Fbfanbox>						
+					</children>
+				</admin>
+			</resources>
+		</acl>	
+		
+		<layout>
+			<updates>
+				<fbfanbox>
+					<file>fbfanbox.xml</file>
+				</fbfanbox>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <fbfanbox>
+                <class>Magestore_Fbfanbox_Model</class>
+                <resourceModel>fbfanbox_mysql4</resourceModel>
+            </fbfanbox>
+            <fbfanbox_mysql4>
+                <class>Magestore_Fbfanbox_Model_Mysql4</class>
+                <entities>
+                    <fbfanbox>
+                        <table>fbfanbox</table>
+                    </fbfanbox>
+                </entities>
+            </fbfanbox_mysql4>
+        </models>
+        <resources>
+            <fbfanbox_setup>
+                <setup>
+                    <module>Magestore_Fbfanbox</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </fbfanbox_setup>
+            <fbfanbox_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </fbfanbox_write>
+            <fbfanbox_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </fbfanbox_read>
+        </resources>
+        <blocks>
+            <fbfanbox>
+                <class>Magestore_Fbfanbox_Block</class>
+            </fbfanbox>
+        </blocks>
+        <helpers>
+            <fbfanbox>
+                <class>Magestore_Fbfanbox_Helper</class>
+            </fbfanbox>
+        </helpers>
+    </global>
+</config>
