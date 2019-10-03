@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/fbfanbox",
+    "name": "OpenMageModuleFostering\/fbfanbox",
     "type": "magento-module",
     "license": "OSL-v3.0",
     "homepage": "",
     "description": "Shows Fan of a Facebook page or a Facebook application on Magento stores.",
     "authors": [
-    {
-        "name": "Magestore.com",
-        "email": "magestore@gmail.com"
-    }
-],
+        {
+            "name": "Magestore.com",
+            "email": "magestore@gmail.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
